@@ -1,0 +1,17 @@
+#Nesse desafio o código irá receber uma frase qualquer e identificar a maior palavra
+print("Olá, me diga uma frase por favor")
+Frase = input()
+ListaDePalavras = Frase.split()
+ListaDePalavras = sorted(ListaDePalavras, key=len)
+MaioresPalavras = []
+MaioresPalavras.append(ListaDePalavras[-1])
+
+i = 0
+
+while i < len(ListaDePalavras):
+    if ListaDePalavras[i] == MaioresPalavras[0]:
+        break
+    elif len(ListaDePalavras[i]) == len(MaioresPalavras[0]):
+       MaioresPalavras.append(ListaDePalavras[i])
+    i = i+1
+print("Bela frase! as maiores palavras são:", MaioresPalavras)
