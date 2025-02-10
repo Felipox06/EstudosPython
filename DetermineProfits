@@ -1,4 +1,4 @@
-#Nesse código criei um sistema de cálculo de custos e lucro, baseado em uma série de perguntas simples e objetivas. Optei por faze-lo em inglês para deixar o código "universal".
+#Nesse código criei um sistema de cálculo de custos e lucro em Python, baseado em uma série de perguntas simples e objetivas. Optei por faze-lo em inglês para deixar o código "universal".
 print("How much each unit of your product costs?")
 CostPerUnit = float(input())
 
