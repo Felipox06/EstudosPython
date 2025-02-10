@@ -14,4 +14,8 @@ while i < len(ListaDePalavras):
     elif len(ListaDePalavras[i]) == len(MaioresPalavras[0]):
        MaioresPalavras.append(ListaDePalavras[i])
     i = i+1
-print("Bela frase! as maiores palavras são:", MaioresPalavras)
+
+if len(MaioresPalavras) != 1:
+    print("Bela frase! as maiores palavras são:", MaioresPalavras)
+else:
+    print("Bela frase! a maior palavra é:", MaioresPalavras)
