@@ -1,0 +1,24 @@
+#Nesse código criei um sistema de cálculo de custos e lucro, baseado em uma série de perguntas simples e objetivas. Optei por faze-lo em inglês para deixar o código "universal".
+print("How much each unit of your product costs?")
+CostPerUnit = float(input())
+
+print("How many you bought?")
+Units = int(input())
+
+TotalCost = CostPerUnit*Units
+print("Great! Yout total cost is R$", TotalCost)
+print("Would you like to calculate your price per unit by the amount of profits(Type 'A') or the other way around?(Type 'B')")
+Answer = input()
+if Answer == "A":
+    print("How much would you like to profit?")
+    Profit = float(input())
+    Money = TotalCost + Profit
+    PricePerUnit = Money / Units
+    Margin = PricePerUnit / CostPerUnit
+    print("If you want to profit", Profit,"you must charge R$", PricePerUnit,", wich means a margin of", Margin * 100,"%")
+elif Answer == "B":
+    print("How much would you like to charge per unit?")
+    PricePerUnit = float(input())
+    Profit = PricePerUnit * Units - TotalCost
+    Margin = PricePerUnit / CostPerUnit
+    print("If you want to charge", PricePerUnit,"and is able to sell all units, the profit would be R$", Profit,"and the margin would be of", Margin * 100,"%")
