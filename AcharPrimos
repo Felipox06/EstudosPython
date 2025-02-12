@@ -1,4 +1,4 @@
-#Vi algum desafio similar no Tiktok e fiz a minha própria versão: aqui o usuário pode identificar todos os primos entre 0 e algum número maior que 2 qualquer.
+#Vi algum desafio similar no Tiktok e fiz a minha própria versão: aqui o usuário pode identificar todos os primos entre 0 e algum número inteiro maior que 2 qualquer.
 
 while True:
     print("Até quando você quer verificar a existência de primos?")
@@ -17,10 +17,11 @@ for i in range(2, Teto):
         Sobra = num % ListaDePrimos[n]
         if Sobra == 0:
            SobraTotal = 1
-    if SobraTotal == 0:
+    if SobraTotal == 0 and num <= Teto:
        ListaDePrimos.append(num)
     SobraTotal = 0
 
 ListaDePrimos.insert(0, 1)
-
-print(ListaDePrimos)
+Quantidade = len(ListaDePrimos)
+ 
+print("Entre 0 e", Teto,"existem", Quantidade ,"primos e eles são:", ListaDePrimos)
