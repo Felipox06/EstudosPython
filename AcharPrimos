@@ -1,0 +1,26 @@
+#Vi algum desafio similar no Tiktok e fiz a minha própria versão: aqui o usuário pode identificar todos os primos entre 0 e algum número positivo qualquer.
+
+while True:
+    print("Até quando você quer verificar a existência de primos?")
+    Teto = int(input())
+    if Teto > 2:
+       break
+
+ListaDePrimos = [2]
+
+Sobra = 0
+SobraTotal = 0
+
+for i in range(2, Teto):
+    num = i * 2 - 1
+    for n in range(len(ListaDePrimos)):
+        Sobra = num % ListaDePrimos[n]
+        if Sobra == 0:
+           SobraTotal = 1
+    if SobraTotal == 0:
+       ListaDePrimos.append(num)
+    SobraTotal = 0
+
+ListaDePrimos.insert(0, 1)
+
+print(ListaDePrimos)
