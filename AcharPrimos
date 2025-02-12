@@ -1,4 +1,4 @@
-#Vi algum desafio similar no Tiktok e fiz a minha própria versão: aqui o usuário pode identificar todos os primos entre 0 e algum número positivo qualquer.
+#Vi algum desafio similar no Tiktok e fiz a minha própria versão: aqui o usuário pode identificar todos os primos entre 0 e algum número maior que 2 qualquer.
 
 while True:
     print("Até quando você quer verificar a existência de primos?")
