@@ -1,0 +1,34 @@
+#Aqui estou colocando em prática o conhecimento sobre a estrutura de dados de "Binary Search Trees", realizando o código após acompanhar essa vídeo aula(https://youtu.be/DlWxqU3LLpY?si=BHUM7vGcptztGyt2)
+#Também decidi acrescentar alguns comentários para esclarecer a lógica.
+
+#Aqui vamos criar a classe do Nó da Árvore, ou seja, o conjunto das funções que irão ser utilizadas nos valores para organiza-los.
+class TreeNode:
+    def __init__(self, value):
+        self.left = None
+        self.right = None
+        self.value = value
+    
+    #A def insert irá receber o número de uma posição já existente(inicialmente a root) e de um novo valor que será inserido na árvore.
+    def insert(self, value):   
+        #Aqui verificamos para que lado ir e se existe espaço dísponivel nele. Caso já exista outro TreeNode, o processo é repetido nesse nó.
+        if value < self.value:
+            if self.left == None:
+                self.left = TreeNode(value)
+            else:
+                self.left.insert(value)
+        else:
+            if self.right == None:
+                self.right = TreeNode(value)
+            else:
+                self.right.insert(value)
+
+
+#Estabeleço valores para testar a estrutura
+tree = TreeNode(10)
+tree.insert(5)
+tree.insert(4)
+tree.insert(2)
+
+print(tree.left.left.value)
+            
+                
