@@ -1,6 +1,6 @@
-#Vi algum desafio similar na internet e decidi fazer minha própria versão: aqui o usuário diz até quando ele quer verificar a existencia de primos de 0 até um valor inteiro positivo qualquer
+#Vi algum desafio similar na internet e decidi fazer minha própria versão: aqui o usuário diz até quando ele quer verificar a existencia de primos(2 até um valor inteiro positivo qualquer)
 
-#Um loop até um valor válido ser inserido
+#Um loop até algum valor válido ser inserido
 while True:
     print("Até quando você quer verificar a existência de primos?")
     Teto = int(input())
@@ -16,14 +16,16 @@ SobraTotal = 0
 
 #Crio um loop para verificar os números. Ao invés de ir um por um, achei melhor ter o num como apenas os números primos, pois os pares por definição não seriam primos.
 #Também fiz algo que, em larga escala, poderia dar problemas de complexidade temporal: coloquei um for dentro do outro... Mesmo assim, foi uma maneira rápida e simples de ter o
-#código funcionando, e até números na casa dos trilhões, esse detalhe é imperceptível.
+#código funcionando, e até números na casa dos trilhões, esse efeito é imperceptível.
 for i in range(2, Teto):
     num = i * 2 - 1
     for n in range(len(ListaDePrimos)):
         Sobra = num % ListaDePrimos[n]
         if Sobra == 0:
            SobraTotal = 1
-    if SobraTotal == 0 and num <= Teto:
+    if num > Teto:
+       break
+    elif SobraTotal == 0:
        ListaDePrimos.append(num)
     SobraTotal = 0
 
