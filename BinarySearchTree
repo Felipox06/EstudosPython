@@ -10,7 +10,7 @@ class TreeNode:
     
     #A def insert irá receber o número de uma posição já existente(inicialmente a root) e de um novo valor que será inserido na árvore.
     def insert(self, value):   
-        #Aqui verificamos para que lado ir e se existe espaço dísponivel nele. Caso já exista outro TreeNode, o processo é repetido nesse nó.
+        #Aqui verificamos para que lado ir e se existe espaço dísponivel nele. Caso já exista outro TreeNode, o processo é repetido com esse novo self.
         if value < self.value:
             if self.left == None:
                 self.left = TreeNode(value)
@@ -23,6 +23,33 @@ class TreeNode:
                 self.right.insert(value)
 
 
+    #A def find, provavelmente a função mais útil dessa estrutura, irá verificar primeiro a direção a ser olhada(com ><) 
+    #E então se existe algum valor ali, até encontrar o número(ou não).
+    def find(self, value):
+        if value < self.value:
+            if self.left == None:
+                print("Esse item não está aqui!")
+            else:
+                return self.left.find(value)
+        elif value > self.value:
+            if self.right == None:
+                print("Esse item não está aqui")
+            else:
+                return self.right.find(value)
+        else:
+            print("Está aqui!")
+
+    #A def inorder_tranversal irá navegar pela Tree em um tipo de loop até não existir mais um item na esquerda. Então, dará print onde parou, 
+    #voltará para o item anterior e testará outro caminho.
+    def inorder_transversal(self):
+        if self.left:
+            self.left.inorder_transversal()
+        print(self.value)
+        if self.right:
+            self.right.inorder_transversal()
+    #Existem as defs preorder e postorder, mas por apenas mudar a posição do print na estrutura, achei sua adição trivial.
+
+
 #Estabeleço valores para testar a estrutura
 tree = TreeNode(10)
 tree.insert(5)
@@ -30,5 +57,3 @@ tree.insert(4)
 tree.insert(2)
 
 print(tree.left.left.value)
-            
-                
